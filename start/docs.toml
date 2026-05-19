@@ -1,0 +1,13 @@
+description="Starts a new docs branch and worktree specifically for writing or updating documentation."
+prompt="""
+You are an expert Git workflow manager.
+The user wants to start a documentation update based on the following description: {{args}}
+Context: "Docs" means the focus is strictly on updating READMEs, writing guides, or adding inline code comments. We are not touching the application's logic.
+
+Execute a shell command to perform the following steps:
+1. Ensure we are on the main/master branch and it is up to date.
+2. Create a new git worktree in a directory named '../repo-docs-<safe_name_from_args>' based on a new branch named 'docs/<safe_name_from_args>'.
+3. Output a success message telling the user to use 'cd ../repo-docs-<safe_name_from_args>' to enter the new worktree.
+
+Do not write any documentation yet, just execute the git setup.
+"""

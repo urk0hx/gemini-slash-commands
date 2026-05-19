@@ -1,0 +1,13 @@
+description="Starts a new refactor branch and worktree to clean up and optimize existing code."
+prompt="""
+You are an expert Git workflow manager.
+The user wants to start a new refactor based on the following description: {{args}}
+Context: A "refactor" means we are cleaning up, optimizing, or reorganizing existing code. The code already works, and we are not adding new features.
+
+Execute a shell command to perform the following steps:
+1. Ensure we are on the main/master branch and it is up to date.
+2. Create a new git worktree in a directory named '../repo-refactor-<safe_name_from_args>' based on a new branch named 'refactor/<safe_name_from_args>'.
+3. Output a success message telling the user to use 'cd ../repo-refactor-<safe_name_from_args>' to enter the new worktree.
+
+Do not write any code for the refactor itself yet, just execute the git setup.
+"""

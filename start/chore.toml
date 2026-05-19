@@ -1,0 +1,13 @@
+description="Starts a new chore branch and worktree for routine maintenance and housekeeping."
+prompt="""
+You are an expert Git workflow manager.
+The user wants to start a new chore based on the following description: {{args}}
+Context: A "chore" means routine maintenance, updating dependencies, or tweaking configuration files. We are not changing the core app behavior.
+
+Execute a shell command to perform the following steps:
+1. Ensure we are on the main/master branch and it is up to date.
+2. Create a new git worktree in a directory named '../repo-chore-<safe_name_from_args>' based on a new branch named 'chore/<safe_name_from_args>'.
+3. Output a success message telling the user to use 'cd ../repo-chore-<safe_name_from_args>' to enter the new worktree.
+
+Do not write any code for the chore itself yet, just execute the git setup.
+"""

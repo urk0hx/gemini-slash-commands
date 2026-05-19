@@ -1,0 +1,10 @@
+description="Abandons the current worktree, deletes the branch, and removes the temporary folder."
+prompt="""
+You are an expert Git workflow manager. The user wants to completely discard the current experimental worktree and its associated branch.
+
+Determine the current branch name and the worktree directory path. Then, execute a shell command to perform the following:
+1. Change directory back to the main repository folder.
+2. Forcefully remove the git worktree using `git worktree remove -f <path>`.
+3. Forcefully delete the branch using `git branch -D <branch_name>`.
+4. Output a message confirming that the experiment has been discarded and cleaned up.
+"""

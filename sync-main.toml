@@ -1,0 +1,9 @@
+description="Pulls the latest changes from the main/master branch into the current worktree."
+prompt="""
+You are an expert Git workflow manager. The user is currently in a worktree and wants to sync their current branch with the latest changes from the main (or master) branch.
+
+Execute a shell command to:
+1. Fetch the latest changes from the remote repository.
+2. Merge the origin/main (or origin/master) branch into the current branch.
+3. If there are merge conflicts, output a clear message telling the user which files have conflicts so they can resolve them manually.
+"""

@@ -1,0 +1,12 @@
+description="Safely merges the current worktree branch into main, deletes the worktree, and cleans up."
+prompt="""
+You are an expert Git workflow manager. The user has finished their work in the current worktree and wants to merge it back to the main repository.
+
+Determine the current branch name. Then, execute a shell command to perform the following:
+1. Check if the working directory is clean. If there are uncommitted changes, abort and tell the user to commit first.
+2. Change directory back to the main repository folder.
+3. Checkout the main (or master) branch and pull the latest changes.
+4. Merge the feature/fix branch into main.
+5. If the merge is successful, delete the git worktree and the temporary branch.
+6. If there are merge conflicts during step 4, abort the process, instruct the user to resolve conflicts, and leave the worktree intact.
+"""

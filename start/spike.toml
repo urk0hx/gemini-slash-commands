@@ -1,0 +1,13 @@
+description="Starts a new spike branch and worktree for rapid, safe experimentation."
+prompt="""
+You are an expert Git workflow manager.
+The user wants to start a new spike based on the following description: {{args}}
+Context: A "spike" is a wild experiment or sandbox. This work is highly exploratory and might be completely discarded later using the /discard command.
+
+Execute a shell command to perform the following steps:
+1. Ensure we are on the main/master branch and it is up to date.
+2. Create a new git worktree in a directory named '../repo-spike-<safe_name_from_args>' based on a new branch named 'spike/<safe_name_from_args>'.
+3. Output a success message telling the user to use 'cd ../repo-spike-<safe_name_from_args>' to enter the new worktree.
+
+Do not write any code for the spike itself yet, just execute the git setup.
+"""
